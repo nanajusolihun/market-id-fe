@@ -6,6 +6,9 @@ import { RouterProvider } from "react-router-dom";
 import router from "./routes/index";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
+import "./assets/css/typograph.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
