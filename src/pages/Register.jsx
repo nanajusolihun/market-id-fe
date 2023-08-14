@@ -64,7 +64,7 @@ const Register = () => {
               <InputGroup>
                 <Form.Control id="password" name="password" type={show ? "text" : "password"} placeholder="Password" value={formik.values.password} onChange={formik.handleChange} className={formik.errors.password && "border-danger"} />
 
-                <Button onClick={handleShowPassword}>
+                <Button variant="light" onClick={handleShowPassword}>
                   {show ? <i className="bi bi-eye-fill"></i> : <i className="bi bi-eye-slash-fill"></i>}
                 </Button>
               </InputGroup>
