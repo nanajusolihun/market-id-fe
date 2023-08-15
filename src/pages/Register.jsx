@@ -40,7 +40,7 @@ const Register = () => {
           const message = response.data.message;
 
           toast(handleErrorMessage(message), {
-            position: toast.POSITION.TOP_CENTER,
+            position: toast.POSITION.TOP_RIGHT,
             type: toast.TYPE.SUCCESS,
           });
 
@@ -50,7 +50,7 @@ const Register = () => {
           const message = error.response?.data?.message;
 
           toast(handleErrorMessage(message), {
-            position: toast.POSITION.TOP_CENTER,
+            position: toast.POSITION.TOP_RIGHT,
             type: toast.TYPE.ERROR,
           });
         });
