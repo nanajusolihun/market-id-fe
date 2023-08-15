@@ -1,8 +1,12 @@
 import { React, useState } from "react";
 import { useFormik } from "formik";
 import { Card, Form, Button, InputGroup } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import handleErrorMessage from "../utils/handleErrorMessage";
+
 import * as Yup from "yup";
+import { axiosInstance as axios } from "../config/https";
 
 const initialValues = {
   full_name: "",
@@ -11,14 +15,15 @@ const initialValues = {
 };
 
 const validationSchema = Yup.object({
-  full_name: Yup.string().required("Full Name is Required"),
-  email: Yup.string().required("Email is Required"),
-  password: Yup.string().required("Password is Required"),
+  full_name: Yup.string().required("Field is Required").min(4, "Input must be at least 4 characters").max(30, "Input must be at most 30 characters"),
+  email: Yup.string().required("Email is Required").email(),
+  password: Yup.string().required("Field is Required").min(8).max(12),
 });
 
 // variable REGISTER
 const Register = () => {
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
 
   const handleShowPassword = () => {
     setShow(!show);
@@ -28,7 +33,27 @@ const Register = () => {
     initialValues,
     validationSchema,
     onSubmit: (values) => {
-      console.log("Ini values", values);
+      const form = values;
+      axios
+        .post("/users/new", form)
+        .then((response) => {
+          const message = response.data.message;
+
+          toast(handleErrorMessage(message), {
+            position: toast.POSITION.TOP_CENTER,
+            type: toast.TYPE.SUCCESS,
+          });
+
+          navigate("/login");
+        })
+        .catch((error) => {
+          const message = error.response?.data?.message;
+
+          toast(handleErrorMessage(message), {
+            position: toast.POSITION.TOP_CENTER,
+            type: toast.TYPE.ERROR,
+          });
+        });
     },
   });
 
