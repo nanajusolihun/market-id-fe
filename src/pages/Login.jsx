@@ -1,9 +1,9 @@
 import { React, useState } from "react";
 import { useFormik } from "formik";
-import { Card, Form, Button, InputGroup, Spinner } from "react-bootstrap";
+import { Card, Form, Button, InputGroup } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import handleErrorMessage from "../utils/handleErrorMessage";
 
@@ -26,7 +26,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   // REDUX STORE
-  const { user, token } = useSelector((state) => state.auth);
+  // const { user, token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const handleShowPassword = () => {
@@ -40,6 +40,8 @@ const Login = () => {
   });
 
   function handleLogin(form) {
+    // Set_loading
+    dispatch({ type: "SET_LOADING", value: true });
     axios
       .post("/users/login", form)
       .then((response) => {
@@ -69,6 +71,9 @@ const Login = () => {
           position: toast.POSITION.TOP_RIGHT,
           type: toast.TYPE.ERROR,
         });
+      })
+      .finally(() => {
+        dispatch({ type: "SET_LOADING", value: false });
       });
   }
 
@@ -83,9 +88,18 @@ const Login = () => {
               <Form.Label htmlFor="email" className="mb-2">
                 Email
               </Form.Label>
-              <Form.Control id="email" name="email" type="email" placeholder="example@gmail.com" value={formik.values.email} onChange={formik.handleChange} className={formik.errors.email && "border-danger"} />
+              <Form.Control
+                id="email"
+                name="email"
+                type="email"
+                placeholder="example@gmail.com"
+                value={formik.values.email}
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                className={formik.touched.email && formik.errors.email && "border-danger"}
+              />
 
-              {formik.errors.email && <small className="text-danger test__5">{formik.errors.email}</small>}
+              {formik.touched.email && formik.errors.email && <small className="text-danger test__5">{formik.errors.email}</small>}
             </Form.Group>
 
             <Form.Group>
@@ -93,14 +107,23 @@ const Login = () => {
                 Password
               </Form.Label>
               <InputGroup>
-                <Form.Control id="password" name="password" type={show ? "text" : "password"} placeholder="Password" value={formik.values.password} onChange={formik.handleChange} className={formik.errors.password && "border-danger"} />
+                <Form.Control
+                  id="password"
+                  name="password"
+                  type={show ? "text" : "password"}
+                  placeholder="Password"
+                  value={formik.values.password}
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  className={formik.touched.password && formik.errors.password && "border-danger"}
+                />
 
                 <Button variant="light" onClick={handleShowPassword}>
                   {show ? <i className="bi bi-eye-fill"></i> : <i className="bi bi-eye-slash-fill"></i>}
                 </Button>
               </InputGroup>
 
-              {formik.errors.password && <small className="text-danger test__5">{formik.errors.password}</small>}
+              {formik.touched.password && formik.errors.password && <small className="text-danger test__5">{formik.errors.password}</small>}
             </Form.Group>
 
             <Button type="submit" variant="primary" className="w-100 my-4">

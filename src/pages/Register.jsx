@@ -4,6 +4,7 @@ import { Card, Form, Button, InputGroup } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import handleErrorMessage from "../utils/handleErrorMessage";
+import { useDispatch } from "react-redux";
 
 import * as Yup from "yup";
 import { axiosInstance as axios } from "../config/https";
@@ -25,6 +26,9 @@ const Register = () => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
+  // STORE
+  const dispatch = useDispatch();
+
   const handleShowPassword = () => {
     setShow(!show);
   };
@@ -32,30 +36,37 @@ const Register = () => {
   const formik = useFormik({
     initialValues,
     validationSchema,
-    onSubmit: (values) => {
-      const form = values;
-      axios
-        .post("/users/new", form)
-        .then((response) => {
-          const message = response.data.message;
-
-          toast(handleErrorMessage(message), {
-            position: toast.POSITION.TOP_RIGHT,
-            type: toast.TYPE.SUCCESS,
-          });
-
-          navigate("/login");
-        })
-        .catch((error) => {
-          const message = error.response?.data?.message;
-
-          toast(handleErrorMessage(message), {
-            position: toast.POSITION.TOP_RIGHT,
-            type: toast.TYPE.ERROR,
-          });
-        });
-    },
+    onSubmit: handleRegister,
   });
+
+  function handleRegister(form) {
+    // Set_loading
+    dispatch({ type: "SET_LOADING", value: true });
+    axios
+      .post("/users/new", form)
+      .then((response) => {
+        const message = response.data.message;
+
+        toast(handleErrorMessage(message), {
+          position: toast.POSITION.TOP_RIGHT,
+          type: toast.TYPE.SUCCESS,
+        });
+
+        navigate("/login");
+      })
+      .catch((error) => {
+        const message = error.response?.data?.message;
+
+        toast(handleErrorMessage(message), {
+          position: toast.POSITION.TOP_RIGHT,
+          type: toast.TYPE.ERROR,
+        });
+      })
+      .finally(() => {
+        // Set_loading
+        dispatch({ type: "SET_LOADING", value: false });
+      });
+  }
 
   return (
     <section className="d-flex justify-content-center align-items-center min-vh-100">
@@ -68,18 +79,36 @@ const Register = () => {
               <Form.Label htmlFor="full_name" className="mb-2">
                 Full Name
               </Form.Label>
-              <Form.Control id="full_name" name="full_name" type="text" placeholder="Elon Musk" value={formik.values.full_name} onChange={formik.handleChange} className={formik.errors.full_name && "border-danger"} />
+              <Form.Control
+                id="full_name"
+                name="full_name"
+                type="text"
+                placeholder="Elon Musk"
+                value={formik.values.full_name}
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                className={formik.touched.full_name && formik.errors.full_name && "border-danger"}
+              />
 
-              {formik.errors.full_name && <small className="text-danger test__5">{formik.errors.full_name}</small>}
+              {formik.touched.full_name && formik.errors.full_name && <small className="text-danger test__5">{formik.errors.full_name}</small>}
             </Form.Group>
 
             <Form.Group className="mb-2">
               <Form.Label htmlFor="email" className="mb-2">
                 Email
               </Form.Label>
-              <Form.Control id="email" name="email" type="email" placeholder="example@gmail.com" value={formik.values.email} onChange={formik.handleChange} className={formik.errors.email && "border-danger"} />
+              <Form.Control
+                id="email"
+                name="email"
+                type="email"
+                placeholder="example@gmail.com"
+                value={formik.values.email}
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                className={formik.touched.email && formik.errors.email && "border-danger"}
+              />
 
-              {formik.errors.email && <small className="text-danger test__5">{formik.errors.email}</small>}
+              {formik.touched.email && formik.errors.email && <small className="text-danger test__5">{formik.errors.email}</small>}
             </Form.Group>
 
             <Form.Group>
@@ -87,14 +116,23 @@ const Register = () => {
                 Password
               </Form.Label>
               <InputGroup>
-                <Form.Control id="password" name="password" type={show ? "text" : "password"} placeholder="Password" value={formik.values.password} onChange={formik.handleChange} className={formik.errors.password && "border-danger"} />
+                <Form.Control
+                  id="password"
+                  name="password"
+                  type={show ? "text" : "password"}
+                  placeholder="Password"
+                  value={formik.values.password}
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  className={formik.touched.password && formik.errors.password && "border-danger"}
+                />
 
                 <Button variant="light" onClick={handleShowPassword}>
                   {show ? <i className="bi bi-eye-fill"></i> : <i className="bi bi-eye-slash-fill"></i>}
                 </Button>
               </InputGroup>
 
-              {formik.errors.password && <small className="text-danger test__5">{formik.errors.password}</small>}
+              {formik.touched.password && formik.errors.password && <small className="text-danger test__5">{formik.errors.password}</small>}
             </Form.Group>
 
             <Button type="submit" variant="primary" className="w-100 my-4">
