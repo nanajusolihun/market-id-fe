@@ -1,10 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+  const { user, token } = useSelector((state) => state.auth);
   return (
-    <div>
-      <h1>Ini halaman Home</h1>
-    </div>
+    <>
+      {JSON.stringify(user)}
+      {JSON.stringify(token)}
+    </>
   );
 };
 

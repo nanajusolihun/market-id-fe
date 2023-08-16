@@ -1,8 +1,10 @@
 import { React, useState } from "react";
 import { useFormik } from "formik";
-import { Card, Form, Button, InputGroup } from "react-bootstrap";
+import { Card, Form, Button, InputGroup, Spinner } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useSelector, useDispatch } from "react-redux";
+
 import handleErrorMessage from "../utils/handleErrorMessage";
 
 import * as Yup from "yup";
@@ -23,6 +25,10 @@ const Login = () => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
+  // REDUX STORE
+  const { user, token } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
   const handleShowPassword = () => {
     setShow(!show);
   };
@@ -37,18 +43,28 @@ const Login = () => {
     axios
       .post("/users/login", form)
       .then((response) => {
-        const { data, message } = response.data;
+        const { _id, token, role } = response.data.data;
 
+        // SET STORE
+        dispatch({ type: "AUTH_TOKEN", value: token });
+        dispatch({ type: "AUTH_USER", value: { _id, role } });
+
+        // SET LOCALSTORE
+        localStorage.setItem("token", token);
+        localStorage.setItem("user", JSON.stringify({ _id, role }));
+
+        // TOAST
+        const message = response.data.message;
         toast(handleErrorMessage(message), {
           position: toast.POSITION.TOP_RIGHT,
           type: toast.TYPE.SUCCESS,
         });
 
+        // REDUCER TO HOME
         navigate("/");
       })
       .catch((error) => {
         const message = error.response?.data?.message;
-
         toast(handleErrorMessage(message), {
           position: toast.POSITION.TOP_RIGHT,
           type: toast.TYPE.ERROR,
