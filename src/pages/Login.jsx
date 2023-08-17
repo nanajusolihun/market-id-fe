@@ -1,10 +1,11 @@
 import { React, useState } from "react";
 import { useFormik } from "formik";
-import { Card, Form, Button, InputGroup } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
+import { Card, Form, Button, InputGroup } from "react-bootstrap";
+
+import { toast } from "react-toastify";
 import handleErrorMessage from "../utils/handleErrorMessage";
 
 import * as Yup from "yup";
@@ -23,7 +24,6 @@ const validationSchema = Yup.object({
 // LOGIN
 const Login = () => {
   const [show, setShow] = useState(false);
-  const navigate = useNavigate();
 
   // REDUX STORE
   // const { user, token } = useSelector((state) => state.auth);
@@ -55,17 +55,18 @@ const Login = () => {
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify({ _id, role }));
 
-        // TOAST
+        // TOAST SUCCESS
         const message = response.data.message;
         toast(handleErrorMessage(message), {
           position: toast.POSITION.TOP_RIGHT,
           type: toast.TYPE.SUCCESS,
         });
 
-        // REDUCER TO HOME
-        navigate("/");
+        // REDIRECT TO HOME PAGE
+        window.location.href = "/";
       })
       .catch((error) => {
+        // TOAST ERROR
         const message = error.response?.data?.message;
         toast(handleErrorMessage(message), {
           position: toast.POSITION.TOP_RIGHT,
@@ -132,7 +133,7 @@ const Login = () => {
           </Form>
 
           <p className="test__5 text-center mb-0">
-            Don,t have an account? please <Link to="/register">register</Link>.
+            Don't have an account? please <Link to="/register">register</Link>.
           </p>
         </Card.Body>
       </Card>

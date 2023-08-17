@@ -3,10 +3,13 @@ import { createBrowserRouter, createRoutesFromElements, Route } from "react-rout
 // IMPORT COMPONENT, LAYOUT, RAGE AND AUTH
 import App from "../App";
 
-// CUSTOMER
+// LAYOUT CUSTOMER
+import LayoutProducts from "../layouts/LayoutProducts";
+
+// PAGE CUSTOMER
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import Home from "../pages/Home";
+import Products from "../pages/Products";
 
 // Negative Page
 import Error from "../pages/Error";
@@ -14,7 +17,9 @@ import Error from "../pages/Error";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<App />}>
-      <Route path="/" element={<Home />} />
+      <Route element={<LayoutProducts />}>
+        <Route path="/" element={<Products />} />
+      </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<Error />} />

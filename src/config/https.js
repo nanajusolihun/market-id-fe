@@ -1,13 +1,19 @@
 import axios from "axios";
+import store from "../stores";
+
+const { auth } = store.getState();
 
 const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL, // Replace with your API base URL
+  baseURL: process.env.REACT_APP_BASE_URL,
 });
 
 // Request interceptor
 axiosInstance.interceptors.request.use(
   (config) => {
-    // Do something before request is sent
+    const token = auth.token;
+    if (token) {
+      config.headers.Authorization = `Bearer${token}`;
+    }
     return config;
   },
   (error) => {
@@ -23,7 +29,14 @@ axiosInstance.interceptors.response.use(
     return response;
   },
   (error) => {
-    // Handle response errors here
+    // if status code = 403, romove item token and user
+    const statusCode = error.response.status;
+    if (statusCode === 403) {
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+
+      window.location.href = "/login";
+    }
 
     return Promise.reject(error);
   }

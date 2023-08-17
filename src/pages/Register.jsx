@@ -21,7 +21,7 @@ const validationSchema = Yup.object({
   password: Yup.string().required("Field is Required").min(8).max(12),
 });
 
-// variable REGISTER
+// VARIABLE REGISTER
 const Register = () => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
