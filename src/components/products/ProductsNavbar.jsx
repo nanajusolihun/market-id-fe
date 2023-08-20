@@ -2,6 +2,7 @@ import "../../assets/css/products_navbar.css";
 import "../../assets/css/typograph.css";
 
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { axiosInstance as axios } from "../../config/https";
 
@@ -13,7 +14,29 @@ import { Container, Button, Form, InputGroup, Navbar, Nav } from "react-bootstra
 function ProductsNavbar() {
   // STORE AUTH
   const { token, user } = useSelector((state) => state.auth);
+  const { q, sort_by } = useSelector((state) => state.product);
   const dispatch = useDispatch();
+
+  // STATE
+  const [params, setParams] = useState({
+    q,
+    sort_by,
+  });
+
+  const handleOnChange = (event) => {
+    setParams({
+      ...params,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+
+    // SET VALUE PARAMS Q AND SORT_BY TO STORE PRODUCT
+    dispatch({ type: "ACTION_SEARCH", value: params.q });
+    dispatch({ type: "ACTION_SORT_BY", value: params.sort_by });
+  };
 
   function handleLogout() {
     const _id = user._id;
@@ -49,23 +72,21 @@ function ProductsNavbar() {
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className=" w-100 d-flex justify-content-center align-items-center">
-            <Form className="select__container my-md-0 mt-3">
+            <Form className="select__container my-md-0 mt-3" onSubmit={handleOnSubmit}>
               <InputGroup>
-                <Form.Select className="select__seacrh ">
-                  <option value="1">Sort By</option>
-                  <option value="2">15</option>
-                  <option value="3">20</option>
+                <Form.Select className="select__seacrh" name="sort_by" value={params.sort_by} onChange={handleOnChange}>
+                  <option value="asc">ASC</option>
+                  <option value="desc">DESC</option>
                 </Form.Select>
 
-                <Form.Control placeholder="Search product name..." className="input__seacrh border-0" />
+                <Form.Control placeholder="Search product name..." className="input__seacrh border-0" name="q" value={params.q} onChange={handleOnChange} />
 
-                <Button variant="light" className=" d-flex align-items-center ">
+                <Button type="submit" variant="light" className=" d-flex align-items-center ">
                   <i className="bi bi-search"></i>
                 </Button>
               </InputGroup>
             </Form>
           </Nav>
-
           <Nav>
             {token ? (
               <>

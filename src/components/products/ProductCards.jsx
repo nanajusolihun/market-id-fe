@@ -13,7 +13,7 @@ const ProductCards = (props) => {
         // Membantu tuna rungu atau tuan netra
         alt={`product-${product.name}`}
         className=" object-fit-contain mb-1"
-        height="275"
+        height="235"
       />
       <Card.Body>
         <Card.Subtitle className="sub__heading__4 ">{product.name}</Card.Subtitle>

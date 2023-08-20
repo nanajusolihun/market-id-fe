@@ -9,12 +9,12 @@ const initialState = {
 };
 
 // REDUCERS
-const useReducerAuth = (state = initialState, actions) => {
+const useReducerParamsProduct = (state = initialState, actions) => {
   switch (actions.type) {
     case "AUTH_TOKEN":
       return {
         ...state,
-        user: actions.value,
+        token: actions.value,
       };
 
     case "AUTH_USER":
@@ -28,4 +28,4 @@ const useReducerAuth = (state = initialState, actions) => {
   }
 };
 
-export default useReducerAuth;
+export default useReducerParamsProduct;
