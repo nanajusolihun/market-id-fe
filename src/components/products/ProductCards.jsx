@@ -1,7 +1,7 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
 import defaultIMG from "../../assets/images/defaultImage.png";
 import FormatCurrency from "../../utils/currency";
+import { Button, Card } from "react-bootstrap";
 
 const ProductCards = (props) => {
   const { product } = props;
@@ -13,7 +13,7 @@ const ProductCards = (props) => {
         // Membantu tuna rungu atau tuan netra
         alt={`product-${product.name}`}
         className=" object-fit-contain mb-1"
-        height="235"
+        height="265"
       />
       <Card.Body>
         <Card.Subtitle className="sub__heading__4 ">{product.name}</Card.Subtitle>

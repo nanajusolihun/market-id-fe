@@ -7,7 +7,7 @@ const LayoutProducts = () => {
   return (
     <>
       <ProductsNavbar />
-      <Container className="pt-5">
+      <Container className="py-5">
         <Outlet />
       </Container>
     </>

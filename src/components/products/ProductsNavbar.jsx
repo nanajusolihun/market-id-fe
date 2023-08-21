@@ -35,6 +35,7 @@ function ProductsNavbar() {
 
     // SET VALUE PARAMS Q AND SORT_BY TO STORE PRODUCT
     dispatch({ type: "ACTION_SEARCH", value: params.q });
+    dispatch({ type: "ACTION_PAGE", value: 1 });
     dispatch({ type: "ACTION_SORT_BY", value: params.sort_by });
   };
 
