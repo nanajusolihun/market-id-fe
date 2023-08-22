@@ -1,7 +1,7 @@
 import "../../assets/css/products_navbar.css";
 import "../../assets/css/typograph.css";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { axiosInstance as axios } from "../../config/https";
@@ -70,6 +70,11 @@ function ProductsNavbar() {
       });
   }
 
+  const navigate = useNavigate();
+  function handleToPageCart() {
+    navigate("/cart");
+  }
+
   return (
     <Navbar bg="primary" variant="dark" expand="md">
       <Container>
@@ -97,10 +102,10 @@ function ProductsNavbar() {
           <Nav>
             {token ? (
               <>
-                <Link to="/cart" className="me-md-3 me-0 my-md-0 my-3 btn btn-outline-light d-flex">
+                <Button disabled={countQty === 0} className="me-md-3 me-0 my-md-0 my-3 btn btn-outline-light d-flex" onClick={handleToPageCart}>
                   <i className="bi bi-cart-fill"></i>
                   <span className="sub__heading__5 ms-2">{countQty}</span>
-                </Link>
+                </Button>
                 <Button className=" text-light bg-danger fw-bold" onClick={handleLogout}>
                   Logout
                 </Button>
