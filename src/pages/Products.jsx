@@ -15,6 +15,7 @@ import handleErrorMessage from "../utils/handleErrorMessage";
 const Products = () => {
   const storeParamsProducts = useSelector((state) => state.product);
   const storeLoading = useSelector((state) => state.loading);
+
   const [data, setData] = useState([]);
   const [pagination, setPagination] = useState({});
 
@@ -38,7 +39,6 @@ const Products = () => {
         .then((response) => {
           setData(response.data.data);
           setPagination(response.data.pagination);
-          console.log("ini data", data);
         })
         .catch((error) => {
           // TOAST ERROR
