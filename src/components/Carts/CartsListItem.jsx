@@ -4,7 +4,7 @@ import FormatCurrency from "../../utils/currency";
 import { useSelector, useDispatch } from "react-redux";
 
 const CartsListItem = (props) => {
-  const { cart, index } = props;
+  const { cart, index, isAction = false } = props;
   const storeCarts = useSelector((state) => state.carts);
   const dispatch = useDispatch();
 
@@ -42,20 +42,30 @@ const CartsListItem = (props) => {
 
           <h6 className="ms-2">{cart.name}</h6>
         </div>
-        <h6>{FormatCurrency(cart.sub_total)}</h6>
+        {/* <h6>{FormatCurrency(cart.sub_total)}</h6> */}
 
-        <div>
-          <Button disabled={cart.qty < 2} size="sm" variant={cart.qty < 2 ? "secondary" : "primary"} onClick={handleRemoveItemCart}>
-            <i className="bi bi-dash"></i>
-          </Button>
-          <span className="mx-2 fw-semibold">{cart.qty}</span>
-          <Button size="sm" variant="primary" onClick={handleAddItemCart}>
-            <i className="bi bi-plus"></i>
-          </Button>
-          <Button disabled={storeCarts.dataCart.length < 2} size="sm" variant="danger" className="ms-2" onClick={handleDeleteByIndex}>
-            <i className="bi bi-trash"></i>
-          </Button>
-        </div>
+        {isAction ? (
+          <>
+            <h6>{FormatCurrency(cart.sub_total)}</h6>
+            <div>
+              <Button disabled={cart.qty < 2} size="sm" variant={cart.qty < 2 ? "secondary" : "primary"} onClick={handleRemoveItemCart}>
+                <i className="bi bi-dash"></i>
+              </Button>
+              <span className="mx-2 fw-semibold">{cart.qty}</span>
+              <Button size="sm" variant="primary" onClick={handleAddItemCart}>
+                <i className="bi bi-plus"></i>
+              </Button>
+              <Button disabled={storeCarts.dataCart.length < 2} size="sm" variant="danger" className="ms-2" onClick={handleDeleteByIndex}>
+                <i className="bi bi-trash"></i>
+              </Button>
+            </div>
+          </>
+        ) : (
+          <>
+            <span className="mx-2 fw-semibold">{cart.qty}</span>
+            <h6>{FormatCurrency(cart.sub_total)}</h6>
+          </>
+        )}
       </Card.Body>
     </Card>
   );
