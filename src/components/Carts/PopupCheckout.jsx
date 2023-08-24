@@ -8,10 +8,10 @@ export default function PopupCheckout(props) {
 
       <Modal.Body className="text-center p-3 fw-normal">Please make this payment via bank transfer or digital wallet by sending valid proof of transfer.</Modal.Body>
       <Modal.Body className="p-3 d-flex justify-content-center align-items-center">
-        <Button variant="danger" className="mx-5" onClick={handleCancel}>
+        <Button variant="danger" className="mx-5 fw-bold" onClick={handleCancel}>
           Cancel
         </Button>
-        <Button variant="success" className="mx-5" onClick={handlePayment}>
+        <Button variant="success" className="mx-5 fw-bold" onClick={handlePayment}>
           Pay Now
         </Button>
       </Modal.Body>
