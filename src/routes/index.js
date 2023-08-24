@@ -8,6 +8,7 @@ import LayoutProducts from "../layouts/LayoutProducts";
 
 // LAYOUT CARTS
 import LayoutCarts from "../layouts/LayoutCarts";
+import Invoices from "../pages/Invoices";
 
 // LAYOUT AUTH
 import LayoutAuth from "../layouts/LayoutAuth";
@@ -20,7 +21,6 @@ import Carts from "../pages/Carts";
 
 // Negative Page
 import Error from "../pages/Error";
-
 import store from "../stores";
 
 const { auth } = store.getState();
@@ -48,6 +48,7 @@ const router = createBrowserRouter(
         }
       >
         <Route path="/cart" element={<Carts />} />
+        <Route path="/invoice/:code" element={<Invoices />} />
       </Route>
 
       {/* PAGE LOGIN && REGISTER */}
