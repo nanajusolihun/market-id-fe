@@ -71,8 +71,13 @@ function ProductsNavbar() {
   }
 
   const navigate = useNavigate();
+
   function handleToPageCart() {
     navigate("/cart");
+  }
+
+  function handleProfile() {
+    navigate("/profile");
   }
 
   return (
@@ -104,7 +109,10 @@ function ProductsNavbar() {
               <>
                 <Button disabled={countQty === 0} className="me-md-3 me-0 my-md-0 my-3 btn btn-outline-light d-flex" onClick={handleToPageCart}>
                   <i className="bi bi-cart-fill"></i>
-                  <span className="sub__heading__5 ms-2">{countQty}</span>
+                  <span className="sub__heading__5 ">{countQty}</span>
+                </Button>
+                <Button variant="outline-light" className="mx-3 fw-bold" onClick={handleProfile}>
+                  Profile
                 </Button>
                 <Button className=" text-light bg-danger fw-bold" onClick={handleLogout}>
                   Logout
