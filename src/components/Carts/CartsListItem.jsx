@@ -62,8 +62,8 @@ const CartsListItem = (props) => {
           </>
         ) : (
           <>
-            <span className="mx-2 fw-semibold">{cart.qty}</span>
-            <h6>{FormatCurrency(cart.sub_total)}</h6>
+            <span className="mx-2 fw-bold">{cart.qty}x</span>
+            <h6 className="me-2  fw-bold">{FormatCurrency(cart.sub_total)}</h6>
           </>
         )}
       </Card.Body>
