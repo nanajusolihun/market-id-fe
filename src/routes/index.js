@@ -18,10 +18,12 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Products from "../pages/Products";
 import Carts from "../pages/Carts";
+import Profile from "../pages/Profile";
 
 // Negative Page
 import Error from "../pages/Error";
 import store from "../stores";
+import LayoutCustomerProfile from "../layouts/LayoutCustomerProfile";
 
 const { auth } = store.getState();
 
@@ -39,7 +41,7 @@ const router = createBrowserRouter(
         <Route path="/" element={<Products />} />
       </Route>
 
-      {/* CARTS */}
+      {/* CARTS, INVOICE */}
       <Route
         element={
           <LayoutAuth auth={auth}>
@@ -49,6 +51,11 @@ const router = createBrowserRouter(
       >
         <Route path="/cart" element={<Carts />} />
         <Route path="/invoice/:code" element={<Invoices />} />
+      </Route>
+
+      {/* CUSTOMER PROFILE */}
+      <Route element={<LayoutAuth auth={auth} children={<LayoutCustomerProfile />} />}>
+        <Route path="/profile" element={<Profile />} />
       </Route>
 
       {/* PAGE LOGIN && REGISTER */}

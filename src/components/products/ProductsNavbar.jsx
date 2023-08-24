@@ -1,15 +1,14 @@
 import "../../assets/css/products_navbar.css";
 import "../../assets/css/typograph.css";
 
-import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { axiosInstance as axios } from "../../config/https";
-
 import { toast } from "react-toastify";
-import handleErrorMessage from "../../utils/handleErrorMessage";
-
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { Container, Button, Form, InputGroup, Navbar, Nav } from "react-bootstrap";
+
+import { axiosInstance as axios } from "../../config/https";
+import handleErrorMessage from "../../utils/handleErrorMessage";
 
 function ProductsNavbar() {
   // STORE AUTH
