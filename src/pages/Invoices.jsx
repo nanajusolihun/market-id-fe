@@ -123,7 +123,7 @@ export default function Invoices() {
           </Card>
         </Col>
         <Col lg="8" md="12" sm="12" xs="12">
-          <div style={{ height: "33rem", overflowY: "auto" }}>{carts.length ? carts.map((cart, index) => <CartsListItem key={`cart-checkouts-${cart.name}`} cart={cart} index={index} />) : <h4 className="m">Cart List Empty</h4>}</div>
+          <div style={{ height: "calc(100vh - 20rem)", overflowY: "auto" }}>{carts.length ? carts.map((cart, index) => <CartsListItem key={`cart-checkouts-${cart.name}`} cart={cart} index={index} />) : <h4 className="m">Cart List Empty</h4>}</div>
         </Col>
         <Col lg="4" md="12" sm="12" xs="12">
           <CartsCheckouts detailInvoices={detailInvoices} isStatus={data.status} handleConfirmDone={handleConfirmDone} />

@@ -29,7 +29,7 @@ export default function Carts() {
           <ABreadCrumb options={options} />
         </Col>
         <Col lg="8" md="12" sm="12" xs="12">
-          <div style={{ height: "33rem", overflowY: "auto" }}>
+          <div style={{ height: "calc(100vh - 15rem)", overflowY: "auto" }}>
             {storeCarts.dataCart.length ? storeCarts.dataCart.map((cart, index) => <CartsListItem key={`cart-item-${cart._id}`} cart={cart} index={index} isAction />) : <h4 className="mt-5">Cart List Empty</h4>}
           </div>
         </Col>
