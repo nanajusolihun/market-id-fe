@@ -19,6 +19,7 @@ import Register from "../pages/Register";
 import Products from "../pages/Products";
 import Carts from "../pages/Carts";
 import Profile from "../pages/Profile";
+import History from "../pages/History";
 
 // Negative Page
 import Error from "../pages/Error";
@@ -56,6 +57,7 @@ const router = createBrowserRouter(
       {/* CUSTOMER PROFILE */}
       <Route element={<LayoutAuth auth={auth} children={<LayoutCustomerProfile />} />}>
         <Route path="/profile" element={<Profile />} />
+        <Route path="/history" element={<History />} />
       </Route>
 
       {/* PAGE LOGIN && REGISTER */}
