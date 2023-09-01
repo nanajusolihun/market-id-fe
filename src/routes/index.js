@@ -20,6 +20,9 @@ import Products from "../pages/Products";
 import Carts from "../pages/Carts";
 import Profile from "../pages/Profile";
 import History from "../pages/History";
+import Address from "../pages/Address";
+import CreateFormAddress from "../components/FormAddress/Create";
+import EditFormAddress from "../components/FormAddress/Edit";
 
 // Negative Page
 import Error from "../pages/Error";
@@ -58,6 +61,9 @@ const router = createBrowserRouter(
       <Route element={<LayoutAuth auth={auth} children={<LayoutCustomerProfile />} />}>
         <Route path="/profile" element={<Profile />} />
         <Route path="/history" element={<History />} />
+        <Route path="/address" element={<Address />} />
+        <Route path="/address/create" element={<CreateFormAddress />} />
+        <Route path="/address/edit/:id" element={<EditFormAddress />} />
       </Route>
 
       {/* PAGE LOGIN && REGISTER */}

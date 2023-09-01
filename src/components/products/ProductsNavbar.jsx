@@ -49,7 +49,7 @@ function ProductsNavbar() {
     dispatch({ type: "SET_LOADING", value: true });
 
     axios
-      .post(`/users/${_id}/logout`)
+      .post(`/api/users/${_id}/logout`)
       .then((response) => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");

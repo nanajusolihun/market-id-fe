@@ -43,7 +43,7 @@ const Login = () => {
     // Set_loading
     dispatch({ type: "SET_LOADING", value: true });
     axios
-      .post("/users/login", form)
+      .post("/api/users/login", form)
       .then((response) => {
         const { _id, token, role } = response.data.data;
 

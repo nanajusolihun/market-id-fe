@@ -40,7 +40,7 @@ export default function Invoices() {
     if (isUpdate) {
       dispatch({ type: "SET_LOADING", value: true });
       axios
-        .get(`/checkout/${code}/detail`)
+        .get(`/api/checkout/${code}/detail`)
         .then((response) => {
           setData(response.data.data);
           const carts = response.data.data.cart;
@@ -73,7 +73,7 @@ export default function Invoices() {
   function handleConfirmDone() {
     dispatch({ type: "SET_LOADING", value: true });
     axios
-      .put(`checkout/${code}/confirm`, { status: true })
+      .put(`/api/checkout/${code}/confirm`, { status: true })
       .then((response) => {
         console.log("confirm done");
         setIsUpdate(true);

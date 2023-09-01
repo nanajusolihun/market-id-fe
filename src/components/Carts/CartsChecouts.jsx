@@ -28,7 +28,7 @@ export default function CartsCheckouts(props) {
     if (!optionsAddress.length && isCheckouts) {
       dispatch({ type: "SET_LOADING", value: true });
       axios
-        .get("/address/list")
+        .get("/api/address/list")
         .then((response) => {
           setOptionsAddress(response.data.data);
         })
@@ -51,7 +51,7 @@ export default function CartsCheckouts(props) {
     if (detailInvoices.address_id.length > 0) {
       dispatch({ type: "SET_LOADING", value: true });
       axios
-        .get(`/address/${detailInvoices.address_id}/detail`)
+        .get(`/api/address/${detailInvoices.address_id}/detail`)
         .then((response) => {
           const { name, address, village, district, regency, province, passcode } = response.data.data;
           setFullAddress(`${name} : ${address}, ${village.name}, ${district.name}, ${regency.name}, ${province.name}, ${passcode}`);
@@ -117,7 +117,7 @@ export default function CartsCheckouts(props) {
     // STORE
     dispatch({ type: "SET_LOADING", value: true });
     axios
-      .post("/checkout/new", dataCheckout)
+      .post("/api/checkout/new", dataCheckout)
       .then((response) => {
         const invoice = response.data.data.invoice;
         // TOAST ERROR

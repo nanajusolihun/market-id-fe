@@ -3,9 +3,7 @@ import store from "../stores";
 
 const { auth } = store.getState();
 
-const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL,
-});
+export const axiosInstance = axios
 
 // Request interceptor
 axiosInstance.interceptors.request.use(
@@ -42,4 +40,3 @@ axiosInstance.interceptors.response.use(
   }
 );
 
-export { axiosInstance };

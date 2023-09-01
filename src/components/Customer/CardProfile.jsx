@@ -14,7 +14,6 @@ const initialValues = {
   full_name: "",
   email: "",
   file_name: "",
-  // password: "",
   status: false,
 };
 
@@ -22,7 +21,6 @@ const validationSchema = Yup.object({
   full_name: Yup.string().required("Field is Required").min(4, "Input must be at least 4 characters").max(30, "Input must be at most 30 characters"),
   email: Yup.string().required("Email is Required").email(),
   file_name: Yup.string().required("file_name is Required"),
-  // password: Yup.string().required("Field is Required").min(8).max(12),
 });
 
 export default function CardProfile() {
@@ -45,10 +43,9 @@ export default function CardProfile() {
     if (isLoad) {
       // Set_loading
       dispatch({ type: "SET_LOADING", value: true });
-
       // GET DATA USER DETAIL
       axios
-        .get(`/users/${_id}/detail`)
+        .get(`/api/users/${_id}/detail`)
         .then((response) => {
           const detailUsers = response.data.data;
 
@@ -88,7 +85,7 @@ export default function CardProfile() {
 
     // GET DATA USER DETAIL
     axios
-      .put(`/users/${_id}/update`, formData)
+      .put(`/api/users/${_id}/update`, formData)
       .then((response) => {
         console.log("ini res", response);
 

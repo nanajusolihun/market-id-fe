@@ -40,8 +40,8 @@ export default function CustomerHistory() {
     if (event.target.value.length === 0) setIsLoad (true)
   }
 
-  function handleSubmit (event) {
-    event.preventDefault()
+  function handleSubmit (page) {
+    page.preventDefault()
     setIsLoad(true)
   }
 
@@ -54,7 +54,7 @@ export default function CustomerHistory() {
     if (isLoad) {
       dispatch({ type: "SET_LOADING", value: true });
       axios
-        .get(`/checkout/${_id}/history`, { params: { ...params } })
+        .get(`/api/checkout/${_id}/history`, { params: { ...params } })
         .then(response => {
           setDataHistory(response.data.data.data);
           setTotalExpenses(response.data.data.total_expenses)
@@ -78,7 +78,9 @@ export default function CustomerHistory() {
   return (
     <>
       {/* SORT BY AND SEACRH */}
-      <Form className=" mt-md-0 mt-2 mb-4" onSubmit={handleSubmit}>
+      <Form 
+        className=" mt-md-0 mt-2 mb-4" 
+        onSubmit={handleSubmit}>
         <InputGroup >
           <Form.Select
             name="sort_by"

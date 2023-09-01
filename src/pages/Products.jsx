@@ -35,7 +35,7 @@ const Products = () => {
     if (storeParamsProducts) {
       dispatch({ type: "SET_LOADING", value: true });
       axios
-        .get("/products", { params: { ...storeParamsProducts } })
+        .get("/api/products", { params: { ...storeParamsProducts } })
         .then((response) => {
           setData(response.data.data);
           setPagination(response.data.pagination);
