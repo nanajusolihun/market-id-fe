@@ -51,6 +51,7 @@ const validationSchema = Yup.object({
   }),
   passcode: Yup.string().required("Field passcode is Required"),
   address: Yup.string().required("Field ddress is Required")
+  .min(10, "Input must be at least 10 characters")
 })
 
 export default function FormAddress ({ isEdit = false, detail = {} }) {
@@ -240,7 +241,7 @@ export default function FormAddress ({ isEdit = false, detail = {} }) {
   function createAddress (payload) {
     dispatch({ type: "SET_LOADING", value: true });
       axios
-        .post("/api/address/new", payload)
+        .post(`${process.env.REACT_APP_API_BASE_URL}/address/new`, payload)
         .then((response) => {
           // Toast Success
           toast(response.data.message, {
@@ -266,7 +267,7 @@ export default function FormAddress ({ isEdit = false, detail = {} }) {
   function editAddress (payload) {
     dispatch({ type: "SET_LOADING", value: true });
       axios
-        .put(`/api/address/${detail._id}/update`, payload)
+        .put(`${process.env.REACT_APP_API_BASE_URL}/address/${detail._id}/update`, payload)
         .then((response) => {
           // Toast Success
           toast(response.data.message, {

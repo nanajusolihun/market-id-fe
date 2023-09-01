@@ -12,7 +12,7 @@ import PopupCheckout from "./PopupCheckout";
 
 export default function CartsCheckouts(props) {
   const { isCheckouts = false, isStatus = true, detailInvoices = { address_id: "", sub_total: 0, ppn: 0, total: 0 }, handleConfirmDone = () => {} } = props;
-  const [optionsAddress, setOptionsAddress] = useState([]);
+  const [optionsAddress, setOptionsAddress] = useState(null);
   const [fullAddress, setFullAddress] = useState("-");
 
   const { dataCart } = useSelector((state) => state.carts);
@@ -25,10 +25,10 @@ export default function CartsCheckouts(props) {
 
   // SELECT ADDRESS FOR CHECKOUT
   useEffect(() => {
-    if (!optionsAddress.length && isCheckouts) {
+    if (optionsAddress === null && isCheckouts) {
       dispatch({ type: "SET_LOADING", value: true });
       axios
-        .get("/api/address/list")
+        .get(`${process.env.REACT_APP_API_BASE_URL}/address/list`)
         .then((response) => {
           setOptionsAddress(response.data.data);
         })
@@ -51,7 +51,7 @@ export default function CartsCheckouts(props) {
     if (detailInvoices.address_id.length > 0) {
       dispatch({ type: "SET_LOADING", value: true });
       axios
-        .get(`/api/address/${detailInvoices.address_id}/detail`)
+        .get(`${process.env.REACT_APP_API_BASE_URL}/address/${detailInvoices.address_id}/detail`)
         .then((response) => {
           const { name, address, village, district, regency, province, passcode } = response.data.data;
           setFullAddress(`${name} : ${address}, ${village.name}, ${district.name}, ${regency.name}, ${province.name}, ${passcode}`);
@@ -117,7 +117,7 @@ export default function CartsCheckouts(props) {
     // STORE
     dispatch({ type: "SET_LOADING", value: true });
     axios
-      .post("/api/checkout/new", dataCheckout)
+      .post(`${process.env.REACT_APP_API_BASE_URL}/checkout/new`, dataCheckout)
       .then((response) => {
         const invoice = response.data.data.invoice;
         // TOAST ERROR
@@ -152,7 +152,7 @@ export default function CartsCheckouts(props) {
               </Form.Label>
               <Form.Select id="form-address" value={address._id} onChange={handleChangeAddress}>
                 <option value="">Select your address</option>
-                {optionsAddress.map((address, index) => (
+                {optionsAddress && optionsAddress.map((address, index) => (
                   <option key={`address-${index}`} value={address._id}>
                     {address.name}
                   </option>

@@ -45,7 +45,7 @@ export default function CardProfile() {
       dispatch({ type: "SET_LOADING", value: true });
       // GET DATA USER DETAIL
       axios
-        .get(`/api/users/${_id}/detail`)
+        .get(`${process.env.REACT_APP_API_BASE_URL}/users/${_id}/detail`)
         .then((response) => {
           const detailUsers = response.data.data;
 
@@ -85,10 +85,8 @@ export default function CardProfile() {
 
     // GET DATA USER DETAIL
     axios
-      .put(`/api/users/${_id}/update`, formData)
+      .put(`${process.env.REACT_APP_API_BASE_URL}/users/${_id}/update`, formData)
       .then((response) => {
-        console.log("ini res", response);
-
         toast(response.data.message, {
           position: toast.POSITION.TOP_RIGHT,
           type: toast.TYPE.SUCCESS,

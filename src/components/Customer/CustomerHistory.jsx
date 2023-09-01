@@ -54,7 +54,7 @@ export default function CustomerHistory() {
     if (isLoad) {
       dispatch({ type: "SET_LOADING", value: true });
       axios
-        .get(`/api/checkout/${_id}/history`, { params: { ...params } })
+        .get(`${process.env.REACT_APP_API_BASE_URL}/checkout/${_id}/history`, { params: { ...params } })
         .then(response => {
           setDataHistory(response.data.data.data);
           setTotalExpenses(response.data.data.total_expenses)

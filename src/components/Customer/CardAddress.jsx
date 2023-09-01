@@ -54,7 +54,7 @@ export default function CardAddress () {
     if (isLoad) {
       dispatch({ type: "SET_LOADING", value: true });
       axios
-        .get(`/api/address/list`, { params: { ...params } })
+        .get(`${process.env.REACT_APP_API_BASE_URL}/address/list`, { params: { ...params } })
         .then(response => {
           setTotalData(response.data.pagination.total)
           setDataAddress(response.data.data)
@@ -77,7 +77,7 @@ export default function CardAddress () {
   function handleDelete (id) {
     dispatch({ type: "SET_LOADING", value: true });
       axios
-        .delete(`/api/address/${id}/delete`)
+        .delete(`${process.env.REACT_APP_API_BASE_URL}/address/${id}/delete`)
         .then(response => {
           setIsLoad(true)
             // toast success

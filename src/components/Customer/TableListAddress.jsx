@@ -6,7 +6,6 @@ export default function TableListAddress ({ list, handleDelete = () => {} }) {
 
   function handleEdit ( _id ) {
     navigate(`/address/edit/${ _id }`)
-    console.log("edit", _id)
   }
 
   return (
