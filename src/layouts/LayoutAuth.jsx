@@ -18,7 +18,6 @@ const LayoutAuth = ({ auth, children }) => {
   if (!token) {
     if (isPage) return children;
 
-    return <Navigate to="/login" replace />;
   }
   if (token && isPage) return <Navigate to="/" replace />;
 
