@@ -42,6 +42,7 @@ export default function CustomerHistory() {
 
   function handleSubmit (page) {
     page.preventDefault()
+    setParams({...params, page: 1})
     setIsLoad(true)
   }
 
