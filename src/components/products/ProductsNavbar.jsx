@@ -9,6 +9,7 @@ import { Container, Button, Form, InputGroup, Navbar, Nav } from "react-bootstra
 
 import { axiosInstance as axios } from "../../config/https";
 import handleErrorMessage from "../../utils/handleErrorMessage";
+import LogoImg from "../../assets/images/Logo_market_id.png"
 
 function ProductsNavbar() {
   // STORE AUTH
@@ -83,6 +84,13 @@ function ProductsNavbar() {
     <Navbar bg="primary" variant="dark" expand="md">
       <Container>
         <Navbar.Brand href="/" className="heading__4 ">
+        <img
+          alt=""
+          src={LogoImg}
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+        /> {' '}
           MARKET.ID
         </Navbar.Brand>
         <Navbar.Toggle />
