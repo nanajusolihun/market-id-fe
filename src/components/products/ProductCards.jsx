@@ -34,14 +34,14 @@ const ProductCards = (props) => {
 
   return (
     <>
-      <Card className=" w-100">
+      <Card className=" w-100 h-100">
         <Card.Img
           variant="top"
           src={product.image ? product.image.url : defaultIMG}
           // Membantu tuna rungu atau tuan netra
           alt={`product-${product.name}`}
-          className=" object-fit-contain mb-1"
-          height="265"
+          className=" object-fit-cover mb-1"
+          height="200"
         />
         <Card.Body>
           <Card.Subtitle className="sub__heading__4 ">{product.name}</Card.Subtitle>
