@@ -55,7 +55,7 @@ function ProductsNavbar() {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
 
-        window.location.href = "/login";
+        window.location.href = "/";
       })
       .catch((error) => {
         // TOAST ERROR
