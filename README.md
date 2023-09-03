@@ -18,7 +18,7 @@ See the project market ID. <a href='https://market-id-fe-ten.vercel.app/'>Click 
 * React Redux
 * React Router Dom
 * React Bootstrap
-* (https://raw.githubusercontent.com/jmnote/z-icons/master/svg/bootstrap.svg)
+* Bootstrap
 * Axios
 * Formik
 * Yup
