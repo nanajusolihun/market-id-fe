@@ -1,3 +1,53 @@
+# MARKET ID
+
+---
+
+Market ID is one of the E-commerce that provides a variety of fashion and lifestyles. Market Id is the final project in the MERN project learning process at Eduwork.
+See the project market ID. <a href='https://market-id-fe-ten.vercel.app/'>Click here</a>
+
+---
+
+# STACK
+
+## FrontEnd
+
+* HMTL 5
+* CSS 3
+* Javascript
+* React JS
+* React Redux
+* React Router Dom
+* React Bootstrap
+* Axios
+* Formik
+* Yup
+
+---
+
+## Backend
+
+* Mongo DB
+* Node Js
+* Axios
+* Bcrypt
+* Cloudinary
+* Cors
+* Express
+* Jsonwebtoken
+* Mongoose
+* Multer
+* Validatorjs
+* Nodemon
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
