@@ -3,7 +3,7 @@
 <br />
 
 Market ID is one of the E-commerce that provides a variety of fashion and lifestyles. Market ID is the final project in the MERN project learning process at Eduwork.
-See the project market ID "<a href='https://market-id-fe-ten.vercel.app/'>MarketID</a>"
+See the project market ID <a href='https://market-id-fe-ten.vercel.app/'>Click here</a>
 
 
 ---
