@@ -6,12 +6,14 @@ Market ID is one of the E-commerce that provides a variety of fashion and lifest
 See the project market ID. <a href='https://market-id-fe-ten.vercel.app/'>Click here</a>
 
 
+---
 
-# STACK
+
+# Language adn Tools
 
 ## FrontEnd
 
-<img align="left" alt="html" width="35px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+<img align="left" alt="html" width="35px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
 
 * HMTL 5
 * CSS 3
