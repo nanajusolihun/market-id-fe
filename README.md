@@ -1,5 +1,6 @@
 # MARKET ID
 
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&pause=1000&center=true&multiline=true&width=435&lines=MARKET+ID;Nana+Jusolihun)](https://git.io/typing-svg)
 
 
 Market ID is one of the E-commerce that provides a variety of fashion and lifestyles. Market ID is the final project in the MERN project learning process at Eduwork.
@@ -9,15 +10,16 @@ See the project market ID "<a href='https://market-id-fe-ten.vercel.app/'>Market
 ---
 
 
-# Language and Tools
+## Languages and Tools
 
-## FrontEnd
+### FrontEnd
 
 <img align="left" alt="html" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-<img align="left" alt="html" width="40px"  style="padding-right:70px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-<img align="left" alt="html" width="40px" style="padding-right:100px;"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-<img align="left" alt="html" width="40px" style="padding-right:40px;"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-<img align="left" alt="html" width="40px" style="padding-right:50px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+<img align="left" alt="html" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+<img align="left" alt="html" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+<img align="left" alt="html" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+<img align="left" alt="html" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
+
 
 
 
@@ -36,7 +38,7 @@ See the project market ID "<a href='https://market-id-fe-ten.vercel.app/'>Market
 
 
 
-## Backend
+### Backend
 
 * Mongo DB
 * Node Js
