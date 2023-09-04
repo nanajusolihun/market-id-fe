@@ -9,26 +9,33 @@ const ProductCards = (props) => {
   const { product } = props;
 
   const storeCarts = useSelector((state) => state.carts);
+  const { token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    let dataCart = storeCarts.dataCart;
 
-    const findProductById = dataCart.find((item) => item._id === product._id);
+    if (!token) {
+      // REDIRECT TO HOME PAGE
+      window.location.href = "/login";
+    } else {
+      let dataCart = storeCarts.dataCart;
 
-    if (!findProductById) {
-      dataCart.push({ ...product, qty: 1, sub_total: product.price * 1 });
-      dispatch({ type: "SET_CARTS", value: dataCart });
-    }
-
-    if (findProductById) {
-      dataCart.forEach((item) => {
-        if (item._id === product._id) {
-          item.qty += 1;
-          item.sub_total = item.qty * item.price;
-        }
-      });
-      dispatch({ type: "SET_CARTS", value: dataCart });
+      const findProductById = dataCart.find((item) => item._id === product._id);
+  
+      if (!findProductById) {
+        dataCart.push({ ...product, qty: 1, sub_total: product.price * 1 });
+        dispatch({ type: "SET_CARTS", value: dataCart });
+      }
+  
+      if (findProductById) {
+        dataCart.forEach((item) => {
+          if (item._id === product._id) {
+            item.qty += 1;
+            item.sub_total = item.qty * item.price;
+          }
+        });
+        dispatch({ type: "SET_CARTS", value: dataCart });
+      }
     }
   };
 
