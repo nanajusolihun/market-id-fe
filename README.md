@@ -1,3 +1,58 @@
+<h1 align="center">
+ <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&pause=1000&center=true&vCenter=true&width=435&lines=Welcome+to+Market+ID" alt="Typing SVG" />
+</h1>
+
+<br />
+
+Market ID is one of the E-commerce that provides a variety of fashion and lifestyles. Market ID is the final project in the MERN project learning process at Eduwork.
+See the project market ID <a href='https://market-id-fe-ten.vercel.app/'>Click here</a>
+
+<br />
+<div align="center">
+<a href="https://market-id-fe-ten.vercel.app/" target="_blank">
+   <img src="https://img.shields.io/badge/MARKET.ID-000000?style=for-the-badge&logo=vercel&logoColor=white" target="_blank" />
+</a>
+</div>
+
+---
+
+
+<h2> ⚡ STACK</h2>
+<br />
+<h3>⌨️  FrontEnd</h3>
+<br />
+<div>
+<img align="left" alt="html5" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+<img align="left" alt="css3" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+<img align="left" alt="javascript" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+<img align="left" alt="GitHub" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+<img align="left" alt="react" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+<img align="left" alt="bootstrap" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
+</div>
+
+
+<br />
+<br />
+<br />
+
+
+<h3>⚙  Backend</h3>
+<br />
+<div>
+<img align="left" alt="node-js" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+<img align="left" alt="node-js" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" />
+<img align="left" alt="express" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" />
+</div>
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
