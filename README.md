@@ -2,8 +2,8 @@
 
 
 
-Market ID is one of the E-commerce that provides a variety of fashion and lifestyles. Market Id is the final project in the MERN project learning process at Eduwork.
-See the project market ID. <a href='https://market-id-fe-ten.vercel.app/'>Click here</a>
+Market ID is one of the E-commerce that provides a variety of fashion and lifestyles. Market ID is the final project in the MERN project learning process at Eduwork.
+See the project market ID "<a href='https://market-id-fe-ten.vercel.app/'>MarketID</a>"
 
 
 ---
@@ -14,10 +14,10 @@ See the project market ID. <a href='https://market-id-fe-ten.vercel.app/'>Click 
 ## FrontEnd
 
 <img align="left" alt="html" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-<img align="left" alt="html" width="40px"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-<img align="left" alt="html" width="40px"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-<img align="left" alt="html" width="40px"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-<img align="left" alt="html" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+<img align="left" alt="html" width="40px"  style="padding-right:70px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+<img align="left" alt="html" width="40px" style="padding-right:100px;"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+<img align="left" alt="html" width="40px" style="padding-right:40px;"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+<img align="left" alt="html" width="40px" style="padding-right:50px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
 
 
 
