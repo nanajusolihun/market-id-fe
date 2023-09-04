@@ -11,6 +11,8 @@ See the project market ID. <a href='https://market-id-fe-ten.vercel.app/'>Click 
 
 ## FrontEnd
 
+<img align="left" alt="html" width="35px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+
 * HMTL 5
 * CSS 3
 * Javascript
