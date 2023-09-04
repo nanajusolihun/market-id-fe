@@ -7,7 +7,6 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&pause=1000&center=true&multiline=true&width=435&lines=MARKET+ID;Nana+Jusolihun">
 </p>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&pause=1000&center=true&multiline=true&width=435&lines=MARKET+ID;Nana+Jusolihun)](https://git.io/typing-svg)
 
 Market ID is one of the E-commerce that provides a variety of fashion and lifestyles. Market ID is the final project in the MERN project learning process at Eduwork.
 See the project market ID "<a href='https://market-id-fe-ten.vercel.app/'>MarketID</a>"
@@ -16,55 +15,21 @@ See the project market ID "<a href='https://market-id-fe-ten.vercel.app/'>Market
 ---
 
 
-## Languages and Tools
+## ⚡ Languages and Tools
 
-### FrontEnd
+### ⌨️  FrontEnd
 
-<img align="left" alt="html" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-<img align="left" alt="html" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
-<img align="left" alt="html" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
-<img align="left" alt="html" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
-<img align="left" alt="html" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
+<img align="left" alt="html5" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+<img align="left" alt="css3" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+<img align="left" alt="javascript" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+<img align="left" alt="github" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+<img align="left" alt="react" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+<img align="left" alt="bootstrap" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
 
-
-
-
-
-* HMTL 5
-* CSS 3
-* Javascript
-* React JS
-* React Redux
-* React Router Dom
-* React Bootstrap
-* Bootstrap
-* Axios
-* Formik
-* Yup
-
-
-
-### Backend
-
-* Mongo DB
-* Node Js
-* Axios
-* Bcrypt
-* Cloudinary
-* Cors
-* Express
-* Jsonwebtoken
-* Mongoose
-* Multer
-* Validatorjs
-* Nodemon
-
-
-
-
-
-
-
+### ⚙  Backend
+<img align="left" alt="node-js" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+<img align="left" alt="node-js" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" />
+<img align="left" alt="express" width="40px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" />
 
 
 
