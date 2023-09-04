@@ -1,7 +1,13 @@
 <p align="center">
-  <h1>[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&pause=1000&center=true&multiline=true&width=435&lines=MARKET+ID;Nana+Jusolihun)](https://git.io/typing-svg)</h1>
+  <h1>MARKET ID</h1>
 </p>
 
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&pause=1000&center=true&multiline=true&width=435&lines=MARKET+ID;Nana+Jusolihun">
+</p>
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&pause=1000&center=true&multiline=true&width=435&lines=MARKET+ID;Nana+Jusolihun)](https://git.io/typing-svg)
 
 Market ID is one of the E-commerce that provides a variety of fashion and lifestyles. Market ID is the final project in the MERN project learning process at Eduwork.
 See the project market ID "<a href='https://market-id-fe-ten.vercel.app/'>MarketID</a>"
