@@ -85,25 +85,25 @@ export default function CardProfile() {
 
     // GET DATA USER DETAIL
     axios
-      .put(`${process.env.REACT_APP_API_BASE_URL}/users/${_id}/update`, formData)
-      .then((response) => {
-        toast(response.data.message, {
-          position: toast.POSITION.TOP_RIGHT,
-          type: toast.TYPE.SUCCESS,
-        });
-      })
-      .catch((error) => {
-        const message = error.response?.data?.message;
-        toast(handleErrorMessage(message), {
-          position: toast.POSITION.TOP_RIGHT,
-          type: toast.TYPE.ERROR,
-        });
-      })
-      .finally(() => {
-        // Set_loading
-        dispatch({ type: "SET_LOADING", value: false });
-        handleResetForm();
+    .put(`${process.env.REACT_APP_API_BASE_URL}/users/${_id}/update`, formData)
+    .then((response) => {
+      toast(response.data.message, {
+        position: toast.POSITION.TOP_RIGHT,
+        type: toast.TYPE.SUCCESS,
       });
+    })
+    .catch((error) => {
+      const message = error.response?.data?.message;
+      toast(handleErrorMessage(message), {
+        position: toast.POSITION.TOP_RIGHT,
+        type: toast.TYPE.ERROR,
+      });
+    })
+    .finally(() => {
+      // Set_loading
+      dispatch({ type: "SET_LOADING", value: false });
+      handleResetForm();
+    });
   }
 
   function handleChangeImage(event) {
